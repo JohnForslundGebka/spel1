@@ -11,18 +11,16 @@ int main(void)
     Vector2 ballPosition = {-100.00f,-100.00f};
     Color ballColor = RED;
     Color colors[8] = {RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, BROWN, DARKGRAY};
-    int currentColor = 0;
 
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
         ballPosition = GetMousePosition();
-        
+
         if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
-            ballColor = colors[currentColor%8];
-            currentColor++;
+            ballColor = colors[GetRandomValue(0, 7)];
         }
 
         //Draw screen
