@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.28)
 set(CMAKE_CXX_STANDARD 17)
 project(spel1)
 
 add_subdirectory(external/raylib)
+
+include_directories({$CMAKE_SOURCE_DIR}/include)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
