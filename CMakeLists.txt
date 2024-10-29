@@ -4,12 +4,11 @@ project(spel1)
 
 add_subdirectory(external/raylib)
 
-add_executable(spel1 main.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 
-target_link_libraries(your_target PRIVATE raylib)
+target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+
 # Checks if OSX and links appropriate frameworks (only required on MacOS)
 if (APPLE)
-    target_link_libraries(${PROJECT_NAME} "-framework IOKit")
-    target_link_libraries(${PROJECT_NAME} "-framework Cocoa")
-    target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
+    target_link_libraries(${PROJECT_NAME} PRIVATE "-framework IOKit" "-framework Cocoa" "-framework OpenGL")
 endif()
